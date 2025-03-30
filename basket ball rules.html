@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Rules - Animated & Colorful</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffecb3, #b3e5fc); /* Light yellow to light blue gradient */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            padding: 40px;
+            width: 85%;
+            max-width: 900px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: #d32f2f; /* Red heading */
+            text-align: center;
+            margin-bottom: 35px;
+            animation: bounceIn 1.2s ease-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .rule-section {
+            margin-bottom: 30px;
+            border-left: 6px solid #1976d2; /* Blue border */
+            padding-left: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rule-section h2 {
+            color: #ff9800; /* Orange subheading */
+            margin-bottom: 12px;
+            animation: slideInRight 1s ease-in-out;
+        }
+
+        .rule-section p {
+            color: #444;
+            line-height: 1.7;
+            animation: fadeIn 1.3s ease-in-out;
+        }
+
+        .rule-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -12px;
+            width: 24px;
+            height: 24px;
+            background-color: #4caf50; /* Green circle */
+            border-radius: 50%;
+            animation: rotatePulse 2.5s infinite linear;
+        }
+
+        .rule-section:nth-child(even) {
+            border-left: 6px solid #ff5722; /* Deep orange for even sections */
+        }
+
+        .rule-section:nth-child(even)::before {
+            background-color: #9c27b0; /* Purple circle for even sections */
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(.9, .9, .9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(.97, .97, .97);
+            }
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotatePulse {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Basketball Rules</h1>
+
+        <div class="rule-section">
+            <h2>Scoring</h2>
+            <p>A successful field goal inside the three-point arc is worth two points, while a field goal beyond the three-point arc is worth three points. A successful free throw is worth one point.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Traveling</h2>
+            <p>Traveling is an illegal movement of one or both feet beyond the limits outlined in the rules, in any direction, while holding a live ball on the court.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Double Dribble</h2>
+            <p>A player cannot dribble the ball, stop, and then dribble again. Also, a player cannot dribble with both hands at the same time.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Fouls</h2>
+            <p>Personal fouls include illegal physical contact such as pushing, holding, or hitting. Technical fouls are for unsportsmanlike conduct.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Three-Second Rule</h2>
+            <p>An offensive player cannot remain in the opponent's painted area (the key) for more than three consecutive seconds.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Backcourt Violation</h2>
+            <p>Once the offensive team has crossed the half-court line, they cannot return the ball to the backcourt.</p>
+        </div>
+    </div>
+</body>
+</html>

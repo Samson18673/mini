@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archery Rules - Animated & Colorful</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f8ff, #e8f5e9); /* Light blue to light green gradient */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 80%;
+            max-width: 800px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: #4a148c; /* Deep purple */
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out, rainbowText 5s linear infinite;
+        }
+
+        .rule-section {
+            margin-bottom: 25px;
+            border-left: 5px solid #00bcd4; /* Cyan */
+            padding-left: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rule-section h2 {
+            color: #2e7d32; /* Dark green */
+            margin-bottom: 10px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        .rule-section p {
+            color: #555;
+            line-height: 1.6;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .rule-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: #ffeb3b; /* Yellow */
+            border-radius: 50%;
+            animation: spinPulse 2s infinite linear;
+        }
+
+        .rule-section:nth-child(even) {
+            border-left: 5px solid #e91e63; /* Pink */
+        }
+
+        .rule-section:nth-child(even)::before {
+            background-color: #f48fb1; /* Light pink */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes spinPulse {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        @keyframes rainbowText {
+            0% { color: #ff0000; }
+            14% { color: #ff7f00; }
+            28% { color: #ffff00; }
+            42% { color: #00ff00; }
+            57% { color: #0000ff; }
+            71% { color: #4b0082; }
+            85% { color: #8b00ff; }
+            100% { color: #ff0000; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Archery Rules</h1>
+
+        <div class="rule-section">
+            <h2>Safety First</h2>
+            <p>Always ensure the range is clear before shooting. Never point an arrow at anyone.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Equipment Check</h2>
+            <p>Use only approved bows and arrows. Inspect your equipment before each session.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Shooting Line</h2>
+            <p>Remain behind the shooting line until all arrows have been retrieved.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Scoring</h2>
+            <p>Points are awarded based on where the arrow lands on the target. The center is worth the most points.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Retrieving Arrows</h2>
+            <p>Wait for the signal to retrieve your arrows. Walk, don't run, and be careful not to damage the arrows.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Range Etiquette</h2>
+            <p>Maintain silence during shooting. Be respectful of other archers and their equipment.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+
+<html>
+<head>
+    
+    <title>Sports Hub</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+        section {
+            padding: 2.5em;
+            background-color: white;
+            margin: 1em auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.8s ease-out;
+        }
+        .sport-card {
+            border: 1px solid #ddd;
+            padding: 1.5em;
+            margin-bottom: 1.5em;
+            border-radius: 6px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: flex; /* Use flexbox for image and text layout */
+            align-items: center; /* Align items vertically in the center */
+        }
+        .sport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .sport-card img {
+            max-width: 120px;
+            height: auto;
+            margin-right: 1.5em;
+            border-radius: 4px;
+        }
+        form {
+            max-width: 500px;
+            margin: 2em auto;
+        }
+        form label, form input, form textarea, form button {
+            display: block;
+            margin-bottom: 0.8em;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.7em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 1em 1.5em;
+            border-radius: 4px;
+            cursor: pointer;
+            width: auto;
+            transition: background-color 0.3s ease-in-out;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Sports Hub</h1>
+    </header>
+
+    <section>
+        <h2>What is Sports?</h2>
+        <p>Sports are physical activities and games that involve skill, competition, and often physical exertion. They provide entertainment, promote physical fitness, and foster social interaction.</p>
+
+        <h2>Advantages of Sports</h2>
+        <ul>
+            <li>Improved physical health and fitness</li>
+            <li>Enhanced mental well-being</li>
+            <li>Development of teamwork and social skills</li>
+            <li>Stress reduction</li>
+            <li>Increased discipline and focus</li>
+            <li>Building character and resilience</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Explore Different Sports</h2>
+
+        <div class="sport-card">
+            <img src="cricket.1.jpg" alt="Cricket">
+            <div>
+                <h3>Cricket</h3>
+                <p>A bat-and-ball game played between two teams of eleven players each. The objective is to score more runs than the opposing team.</p>
+                <p>More information: <a href="https://en.wikipedia.org/wiki/Cricket" target="_blank">Wikipedia</a></p>
+            </div>
+        </div>
+
+        <div class="sport-card">
+            <img src="archer1.jpg" alt="Archery">
+            <div>
+                <h3>Archery</h3>
+                <p>The art, practice, or skill of propelling arrows with the use of a bow.</p>
+                <p>More information: <a href="https://en.wikipedia.org/wiki/Archery" target="_blank">Wikipedia</a></p>
+            </div>
+        </div>
+
+        <div class="sport-card">
+            <img src="badmition1.jpg" alt="Badminton">
+            <div>
+                <h3>Badminton</h3>
+                <p>A racquet sport played by either two opposing players (singles) or two opposing pairs (doubles), who take positions on opposite halves of a rectangular court that is divided by a net.</p>
+                <p>More information: <a href="https://en.wikipedia.org/wiki/Badminton" target="_blank">Wikipedia</a></p>
+            </div>
+        </div>
+
+        <div class="sport-card">
+            <img src="football1.jpg" alt="Football">
+            <div>
+                <h3>Football (Soccer)</h3>
+                <p>A team sport played between two teams of eleven players with a spherical ball. The objective of the game is to score by kicking or heading the ball into the opposing goal.</p>
+                <p>More information: <a href="https://en.wikipedia.org/wiki/Association_football" target="_blank">Wikipedia</a></p>
+            </div>
+        </div>
+
+        <div class="sport-card">
+            <img src="basketball1.jpg" alt="Basketball">
+            <div>
+                <h3>Basketball</h3>
+                <p>A team sport in which two teams of five active players each try to score points against one another by throwing a basketball through a 305 cm (10 feet) high hoop under organized rules.</p>
+                <p>More information: <a href="https://en.wikipedia.org/wiki/Basketball" target="_blank">Wikipedia</a></p>
+            </div>
+        </div>
+
+        <div class="sport-card">
+            <img src="e sports1.jpeg" alt="Esports">
+            <div>
+                <h3>Esports</h3>
+                <p>Competitive video gaming. Esports often takes the form of organized, multiplayer video game competitions, particularly between professional players, individually or as teams.</p>
+                <p>More information: <a href="https://en.wikipedia.org/wiki/Esports" target="_blank">Wikipedia</a></p>
+            </div>
+        </div>
+
+        <div class="sport-card">
+            <img src="athletic1.jpg" alt="Athletics">
+            <div>
+                <h3>Athletics</h3>
+                <p>A collection of sporting events that involve competitive running, jumping, throwing, and walking. The most common types of athletics competitions are track and field, road running, cross country running, and race walking.</p>
+                <p>More information: <a href="https://en.wikipedia.org/wiki/Athletics_(sport)" target="_blank">Wikipedia</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>To know about the more about our tornment so just add your number and name here:</h2>
+        <form action="file:///C:/GITAM/web%20tech/mini%20project/about%20the%20sports%20and%20rules.html" method="post">
+
+
+            <label for="message">phone number:</label>
+            <textarea id="message" name="message" rows="4" required maxlength="10"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+</body>
+</html>

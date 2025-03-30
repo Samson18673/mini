@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Registration</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #03ff89, #ffffff);
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .registration-container {
+            display: flex;
+            justify-content: space-between; 
+            align-items: flex-start;
+            width: 80%; 
+            max-width: 900px;
+        }
+
+        .registration-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 450px;
+        }
+
+        h2 {
+            color: #ff5722; 
+        }
+
+        button {
+            background-color: #ff5722; /* Bright orange */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e64a19; /* Darker orange */
+        }
+
+        .additional-content {
+            margin-top: 20px;
+            text-align: center;
+            color: #6c757d;
+        }
+
+        .additional-content a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .additional-content a:hover {
+            text-decoration: underline;
+        }
+
+        .additional-info {
+            margin-left: 30px; 
+            flex: 1; 
+            text-align: left; 
+        }
+
+        .additional-info p {
+            line-height: 1.6; 
+        }
+
+        .additional-info ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .additional-info li {
+            margin-bottom: 8px;
+        }
+
+        .additional-info li strong {
+            color: #ff5722; /* Bright orange */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-container">
+        <div class="registration-form">
+            <h2>Sports Registration</h2>
+            <form action="file:///C:/GITAM/web%20tech/mini%20project/application.html" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+
+                <button type="submit">Register</button>
+                <div class="additional-content">
+                    Already registered? <a href="#">Login here</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="additional-info">
+            <h2>Why Register With Us?</h2>
+            <p>Joining our sports community offers numerous benefits, enhancing your athletic experience and performance.</p>
+            <ul>
+                <li><strong>Access to Training Facilities:</strong> Utilize our state-of-the-art facilities.</li>
+                <li><strong>Expert Coaching:</strong> Learn from experienced coaches and trainers.</li>
+                <li><strong>Competitive Events:</strong> Participate in local and national competitions.</li>
+                <li><strong>Community Support:</strong> Join a vibrant community of sports enthusiasts.</li>
+            </ul>
+            <p>Start your sports journey with us today!</p>
+        </div>
+    </div>
+
+</body>
+</html>

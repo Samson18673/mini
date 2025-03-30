@@ -1,0 +1,130 @@
+<html><head>
+        <title>Sports Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 20px;
+            color: #343a40;
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin-bottom: 20px;
+            animation: fadeIn 1s;
+        }
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .sports-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .sport {
+            margin: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 200px;
+         }
+        .sport:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .sport img {
+            width: 100%;
+            height: 150px;
+             transition: transform 0.3s;
+        }
+        .sport img:hover {
+            transform: scale(1.1);
+        }
+        h3 {
+            color: #007BFF;
+            margin: 10px 0;
+        }
+        .register-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .register-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    </style></head><body>
+    <h1>Welcome to Sports Registration</h1>
+    <p>Please select a sport to register:</p>
+    <div class="sports-container">
+        <div class="sport">
+            <img src="cricket.webp" alt="Cricket">
+            <h3>Cricket</h3>
+            <a href="file:///C:/GITAM/web%20tech/mini%20project/crickrt%20application.html" class="register-button">Register</a>
+        </div>
+        <div class="sport">
+            <img src="badmition.jpg" alt="Badminton">
+            <h3>Badminton</h3>
+            <a href="file:///C:/GITAM/web%20tech/mini%20project/badmition%20application.html" class="register-button">Register</a>
+        </div>
+        <div class="sport">
+            <img src="football.jpg" alt="Football">
+            <h3>Football</h3>
+            <a href="file:///C:/GITAM/web%20tech/mini%20project/football%20application.html" class="register-button">Register</a>
+        </div>
+        <div class="sport">
+            <img src="esports.png" alt="Esports">
+            <h3>Esports</h3>
+            <a href="file:///C:/GITAM/web%20tech/mini%20project/e%20sports%20application.html" class="register-button">Register</a>
+        </div>
+        <div class="sport">
+            <img src="archery.jpg" alt="Archery">
+            <h3>Archery</h3>
+            <a href="file:///C:/GITAM/web%20tech/mini%20project/archey%20application.html" class="register-button">Register</a>
+        </div>
+        <div class="sport">
+            <img src="basket ball.webp" alt="Basketball">
+            <h3>Basketball</h3>
+            <a href="file:///C:/GITAM/web%20tech/mini%20project/basket%20ball%20application.html" class="register-button">Register</a>
+        </div>
+    </div>
+    <a href="file:///C:/GITAM/web%20tech/mini%20project/intro.html" class="back-button">Back</a>
+</body></html>

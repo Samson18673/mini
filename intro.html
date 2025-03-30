@@ -1,0 +1,147 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananthapur Tournament - Samson</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fceabb, #f8b500, #f09819);
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.2em;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tournament-info {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: scaleUp 0.8s ease-out;
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .tournament-info h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f09819;
+        }
+
+        .tournament-info p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tournament-info ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .floating-confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ff6347;
+            animation: confettiFall 5s linear infinite, confettiRotate 3s linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(100vh); }
+        }
+
+        @keyframes confettiRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ananthapur Tournament</h1>
+        <p>Organized by Samson</p>
+    </header>
+
+    <div class="tournament-info">
+        <h2>Tournament Information</h2>
+        <p>Welcome to the Ananthapur Tournament, organized by Samson. This event is a celebration of [Insert Purpose of Tournament, e.g., local talent, community spirit, specific cause].</p>
+
+        <p><strong>Key Details:</strong></p>
+        <ul>
+            <li><strong>Dates:</strong> [19-04-2025] - [30-04-2025]</li>
+            <li><strong>Location:</strong> [RDT stadium in Ananthapur]</li>
+            <li><strong>Organizer:</strong> Samson</li>
+            <li><strong>Purpose:</strong> [to help the christ trust]</li>
+            <li><strong>Schedule:</strong> [The schedule will provide through the whatsapp group]</li>
+        </ul>
+
+        <p>We aim to provide a memorable experience for all participants and attendees. The tournament will feature [Insert key features of the tournament like cultural events, presentations, competitions etc.].</p>
+
+        <p>For any inquiries, please contact us at [Insert Contact Information].</p>
+
+        <form action="file:///C:/GITAM/web%20tech/mini%20project/home%20page.html" method="get">
+            <input type="submit" value="Register Now">
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Ananthapur Tournament - Samson</p>
+        <p>Contact: [Insert Contact Information]</p>
+    </footer>
+
+    <div class="floating-confetti" style="top: 10%; left: 20%; animation-delay: 0.5s;"></div>
+    <div class="floating-confetti" style="top: 30%; left: 50%; animation-delay: 1.5s; background-color: #ffd700;"></div>
+    <div class="floating-confetti" style="top: 60%; left: 80%; animation-delay: 2.5s; background-color: #90ee90;"></div>
+    <div class="floating-confetti" style="top: 80%; left: 10%; animation-delay: 3.5s; background-color: #87ceeb;"></div>
+</body>
+</html>

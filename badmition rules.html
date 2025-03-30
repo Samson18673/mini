@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Rules - Animated & Colorful</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 80%;
+            max-width: 800px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: #3f51b5;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .rule-section {
+            margin-bottom: 25px;
+            border-left: 5px solid #ff9800;
+            padding-left: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rule-section h2 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        .rule-section p {
+            color: #555;
+            line-height: 1.6;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .rule-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: #ffc107;
+            border-radius: 50%;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .rule-section:nth-child(even) {
+            border-left: 5px solid #4caf50;
+        }
+
+        .rule-section:nth-child(even)::before {
+            background-color: #8bc34a;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Badminton Rules</h1>
+
+        <div class="rule-section">
+            <h2>Serving</h2>
+            <p>The serve must be hit below the server's waist. The shuttle must land within the designated service court diagonally opposite.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Scoring</h2>
+            <p>A point is scored every time the shuttlecock lands within the opponent's court or if they commit a fault. A match consists of the best of three games, each game played to 21 points.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Faults</h2>
+            <p>Common faults include hitting the shuttlecock out of bounds, failing to return it before it hits the ground twice, or touching the net.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Court Positioning</h2>
+            <p>Players must stay within their respective sides of the court and not touch the net with their body or racket.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Lets</h2>
+            <p>A "let" is called when there is an unforeseen interruption, such as a shuttlecock from another court landing on the playing area. The point is replayed.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>Equipment</h2>
+            <p>Only approved rackets and shuttlecocks should be used. Ensure the net is at the correct height.</p>
+        </div>
+    </div>
+</body>
+</html>

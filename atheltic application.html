@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Athletics Tournament Registration</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, #f0f8ff, #e1f5fe); /* Light blue gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #2c3e50; /* Darker text */
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            width: 550px;
+            animation: bounce 1.2s infinite alternate; /* Bounce animation */
+        }
+
+        h2 {
+            color: #3498db; /* Blue accent */
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: #5dade2;
+        }
+
+        .error {
+            color: #e74c3c;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Athletics Tournament Registration</h2>
+        <form id="athleticsForm">
+            <label for="athleteName">Athlete Name:</label>
+            <input type="text" id="athleteName" name="athleteName" required>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="eventCategory">Event Category:</label>
+            <select id="eventCategory" name="eventCategory" required>
+                <option value="">Select Category</option>
+                <option value="Running">Running</option>
+                <option value="Jumping">Jumping</option>
+                <option value="Throwing">Throwing</option>
+            </select>
+
+            <label for="specificEvent">Specific Event:</label>
+            <input type="text" id="specificEvent" name="specificEvent" placeholder="e.g., 100m Sprint, Long Jump" required>
+
+            <button type="button" onclick="validateForm()">Register</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+
+            <div id="errorMessages" class="error"></div>
+        </form>
+
+        <div id="registrationDetails" style="display: none;">
+            <h2>Registration Details:</h2>
+            <p id="detailsAthleteName"></p>
+            <p id="detailsContactNumber"></p>
+            <p id="detailsEmail"></p>
+            <p id="detailsEventCategory"></p>
+            <p id="detailsSpecificEvent"></p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const athleteName = document.getElementById("athleteName").value;
+            const contactNumber = document.getElementById("contactNumber").value;
+            const email = document.getElementById("email").value;
+            const eventCategory = document.getElementById("eventCategory").value;
+            const specificEvent = document.getElementById("specificEvent").value;
+            let errorMessages = "";
+
+            if (!athleteName || !contactNumber || !email || !eventCategory || !specificEvent) {
+                errorMessages += "Please fill in all required fields.\n";
+            }
+
+            if (isNaN(contactNumber)) {
+                errorMessages += "Invalid Contact Number.\n";
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                errorMessages += "Invalid Email Address.\n";
+            }
+
+            if (errorMessages) {
+                alert(errorMessages);
+                return;
+            }
+
+            const registrationData = {
+                athleteName: athleteName,
+                contactNumber: contactNumber,
+                email: email,
+                eventCategory: eventCategory,
+                specificEvent: specificEvent
+            };
+
+            alert("Registration successful!");
+            clearForm();
+
+            document.getElementById("detailsAthleteName").textContent = "Athlete Name: " + registrationData.athleteName;
+            document.getElementById("detailsContactNumber").textContent = "Contact Number: " + registrationData.contactNumber;
+            document.getElementById("detailsEmail").textContent = "Email: " + registrationData.email;
+            document.getElementById("detailsEventCategory").textContent = "Event Category: " + registrationData.eventCategory;
+            document.getElementById("detailsSpecificEvent").textContent = "Specific Event: " + registrationData.specificEvent;
+
+            document.getElementById("registrationDetails").style.display = "block";
+        }
+
+        function clearForm() {
+            document.getElementById("athleticsForm").reset();
+            document.getElementById("errorMessages").innerHTML = "";
+            document.getElementById("registrationDetails").style.display = "none";
+        }
+    </script>
+</body>
+</html>

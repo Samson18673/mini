@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Badminton Tournament Registration</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 450px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            outline: none;
+        }
+
+        button {
+            background-color: #ffc107;
+            color: #333;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #ffca28;
+        }
+
+        .error {
+            color: #ff4081;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Badminton Tournament Registration</h2>
+        <form id="badmintonForm">
+            <label for="playerName">Player/Team Name:</label>
+            <input type="text" id="playerName" name="playerName" required>
+
+            <label for="contactName">Contact Person Name:</label>
+            <input type="text" id="contactName" name="contactName" required>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="partnerName">Partner Name (Doubles Only, Optional):</label>
+            <input type="text" id="partnerName" name="partnerName">
+
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+
+            <button type="button" onclick="validateForm()">Register</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+
+            <div id="errorMessages" class="error"></div>
+        </form>
+
+        <div id="registrationDetails" style="display: none; color: white;">
+            <h2>Registration Details:</h2>
+            <p id="detailsPlayerName"></p>
+            <p id="detailsContactName"></p>
+            <p id="detailsContactNumber"></p>
+            <p id="detailsEmail"></p>
+            <p id="detailsCity"></p>
+            <p id="detailsPartnerName"></p>
+            <p id="detailsNotes"></p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const playerName = document.getElementById("playerName").value;
+            const contactName = document.getElementById("contactName").value;
+            const contactNumber = document.getElementById("contactNumber").value;
+            const email = document.getElementById("email").value;
+            const city = document.getElementById("city").value;
+            const partnerName = document.getElementById("partnerName").value;
+            const notes = document.getElementById("notes").value;
+            let errorMessages = "";
+
+            if (!playerName || !contactName || !contactNumber || !email || !city) {
+                errorMessages += "Please fill in all required fields.\n";
+            }
+
+            if (isNaN(contactNumber)) {
+                errorMessages += "Invalid Contact Number.\n";
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                errorMessages += "Invalid Email Address.\n";
+            }
+
+            if (errorMessages) {
+                alert(errorMessages);
+                return;
+            }
+
+            const registrationData = {
+                playerName: playerName,
+                contactName: contactName,
+                contactNumber: contactNumber,
+                email: email,
+                city: city,
+                partnerName: partnerName || "N/A",
+                notes: notes || "N/A"
+            };
+
+            alert("Registration successful!");
+            clearForm();
+
+            // Display Registration Details
+            document.getElementById("detailsPlayerName").textContent = "Player/Team Name: " + registrationData.playerName;
+            document.getElementById("detailsContactName").textContent = "Contact Person Name: " + registrationData.contactName;
+            document.getElementById("detailsContactNumber").textContent = "Contact Number: " + registrationData.contactNumber;
+            document.getElementById("detailsEmail").textContent = "Email: " + registrationData.email;
+            document.getElementById("detailsCity").textContent = "City: " + registrationData.city;
+            document.getElementById("detailsPartnerName").textContent = "Partner Name: " + registrationData.partnerName;
+            document.getElementById("detailsNotes").textContent = "Additional Notes: " + registrationData.notes;
+
+            document.getElementById("registrationDetails").style.display = "block";
+        }
+
+        function clearForm() {
+            document.getElementById("badmintonForm").reset();
+            document.getElementById("errorMessages").innerHTML = "";
+            document.getElementById("registrationDetails").style.display = "none"; // Hide details after clear
+        }
+    </script>
+</body>
+</html>

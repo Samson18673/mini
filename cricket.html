@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket & Tennis Rules - Animated</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #fff3e0); /* Gradient background */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #ff9500;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        ol {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 80%;
+            max-width: 700px;
+            list-style-position: inside;
+            margin-bottom: 20px;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        li {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px; /* Space for the animated bullet */
+        }
+
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6b6b; /* Red bullet */
+            border-radius: 50%;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        p {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #555;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cricket Rules</h1>
+    <ol>
+        <li>For team 15 players (11 + 4 substitutions)</li>
+        <li>Teams must bring their own kits; no kits are provided by the organizers.</li>
+        <li>Only balls will be provided by the organizers.</li>
+        <li>Food and water will be provided.</li>
+        <li>Players must be enrolled with the organizers before the submission time.</li>
+        <li>Match schedules will be determined by the umpires based on conditions.</li>
+        <li>Objections must be clarified on the ground itself.</li>
+        <li>No arguments with umpires; team players must maintain peace and harmony.</li>
+        <li>For team registration, pay ₹200 to 6304423156.</li>
+    </ol>
+    <p>These are the same rules for the hot tennis ball tournament. Registration amount is ₹150.</p>
+    <p>Match timings and schedules will be sent through the WhatsApp group.</p>
+    <p>The place and venue will be sent through the WhatsApp group.</p>
+</body>
+</html>

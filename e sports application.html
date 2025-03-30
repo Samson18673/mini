@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esports Tournament Registration</title>
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(to bottom, #121212, #333333); /* Dark esports gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #ffffff; /* Light text */
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            width: 600px;
+            animation: glow 2s infinite alternate; /* Glow animation */
+        }
+
+        h2 {
+            color: #64ffda; /* Cyan accent */
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #77ff00;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #64ffda;
+            outline: none;
+        }
+
+        button {
+            background-color: #64ffda;
+            color: #222;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        button:hover {
+            background-color: #80ffe2;
+        }
+
+        .error {
+            color: #ff6e40;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            }
+            100% {
+                box-shadow: 0 12px 40px rgba(100, 255, 218, 0.3);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Esports Tournament Registration</h2>
+        <form id="esportsForm">
+            <label for="teamName">Team/Player Name:</label>
+            <input type="text" id="teamName" name="teamName" required>
+
+            <label for="contactName">Contact Name:</label>
+            <input type="text" id="contactName" name="contactName" required>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="gameCategory">Game Category:</label>
+            <select id="gameCategory" name="gameCategory" required>
+                <option value="">Select a Category</option>
+                <option value="BGMI">BGMI</option>
+                <option value="Free Fire">Free Fire</option>
+                <option value="Valorant">Valorant</option>
+            </select>
+
+            <label for="playerList">Player List (one per line):</label>
+            <textarea id="playerList" name="playerList" rows="6"></textarea>
+
+            <button type="button" onclick="validateForm()">Register</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+
+            <div id="errorMessages" class="error"></div>
+        </form>
+
+        <div id="registrationDetails" style="display: none;">
+            <h2>Registration Details:</h2>
+            <p id="detailsTeamName"></p>
+            <p id="detailsContactName"></p>
+            <p id="detailsContactNumber"></p>
+            <p id="detailsEmail"></p>
+            <p id="detailsGameCategory"></p>
+            <p id="detailsPlayerList"></p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const teamName = document.getElementById("teamName").value;
+            const contactName = document.getElementById("contactName").value;
+            const contactNumber = document.getElementById("contactNumber").value;
+            const email = document.getElementById("email").value;
+            const gameCategory = document.getElementById("gameCategory").value;
+            const playerList = document.getElementById("playerList").value;
+            let errorMessages = "";
+
+            if (!teamName || !contactName || !contactNumber || !email || !gameCategory) {
+                errorMessages += "Please fill in all required fields.\n";
+            }
+
+            if (isNaN(contactNumber)) {
+                errorMessages += "Invalid Contact Number.\n";
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                errorMessages += "Invalid Email Address.\n";
+            }
+
+            if (errorMessages) {
+                alert(errorMessages);
+                return;
+            }
+
+            const registrationData = {
+                teamName: teamName,
+                contactName: contactName,
+                contactNumber: contactNumber,
+                email: email,
+                gameCategory: gameCategory,
+                playerList: playerList.split('\n')
+            };
+
+            alert("Registration successful!");
+            clearForm();
+
+            document.getElementById("detailsTeamName").textContent = "Team/Player Name: " + registrationData.teamName;
+            document.getElementById("detailsContactName").textContent = "Contact Name: " + registrationData.contactName;
+            document.getElementById("detailsContactNumber").textContent = "Contact Number: " + registrationData.contactNumber;
+            document.getElementById("detailsEmail").textContent = "Email: " + registrationData.email;
+            document.getElementById("detailsGameCategory").textContent = "Game Category: " + registrationData.gameCategory;
+            document.getElementById("detailsPlayerList").textContent = "Player List: " + registrationData.playerList.join(", ");
+
+            document.getElementById("registrationDetails").style.display = "block";
+        }
+
+        function clearForm() {
+            document.getElementById("esportsForm").reset();
+            document.getElementById("errorMessages").innerHTML = "";
+            document.getElementById("registrationDetails").style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esports Tournament</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #283c86, #45a247);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            color: #ffcc00;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .game-section {
+            margin-bottom: 30px;
+            border-radius: 15px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1s ease-in-out;
+        }
+
+        .game-section h2 {
+            color: #64b5f6;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .prize {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4caf50;
+            margin-top: 20px;
+            animation: glow 2s infinite ease-in-out;
+        }
+
+        ol {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: '🎮'; /* Game controller emoji */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #4caf50;
+            }
+            50% {
+                text-shadow: 0 0 20px #4caf50;
+            }
+            100% {
+                text-shadow: 0 0 5px #4caf50;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Esports Tournament</h1>
+
+        <div class="game-section">
+            <h2>BGMI (Battlegrounds Mobile India)</h2>
+            <ol>
+                <li>Standard squad rules apply.</li>
+                <li>No cheating or hacking allowed.</li>
+                <li>Match timings and maps will be announced.</li>
+            </ol>
+            <p class="prize">1st Prize: ₹15,000 | 2nd Prize: ₹5,000</p>
+        </div>
+
+        <div class="game-section">
+            <h2>Valorant</h2>
+            <ol>
+                <li>Standard 5v5 rules apply.</li>
+                <li>No exploiting glitches or bugs.</li>
+                <li>Server details and match schedules will be provided.</li>
+            </ol>
+            <p class="prize">1st Prize: ₹15,000 | 2nd Prize: ₹5,000</p>
+        </div>
+
+        <div class="game-section">
+            <h2>Free Fire</h2>
+            <ol>
+                <li>Standard squad rules apply.</li>
+                <li>Fair play is mandatory.</li>
+                <li>Match details and room IDs will be shared.</li>
+            </ol>
+            <p class="prize">1st Prize: ₹15,000 | 2nd Prize: ₹5,000</p>
+        </div>
+    </div>
+</body>
+</html>
